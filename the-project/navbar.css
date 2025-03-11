@@ -1,0 +1,116 @@
+:root{
+    --text-color: #0d1b2a;
+    --background-color: #83a6ce;
+    --agree-color: #89fc00;
+    --soft-blue: #0096c7;
+    --font-size: 1.5rem;
+    --part-fonts: 2.5rem;
+    --font-paragraph: Trebuchet MS, sans-serif;
+    --font-title: Geneva,Tahoma,Verdana,sans-serif; 
+    --font-weight: 900;
+    --card-color: #358ed7;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+.container{
+    height: 5rem;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes items apart */
+    padding: 0 2rem;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    gap: 20px;
+    font-family: var(--font-title);
+}
+
+.img{
+    width: 80px;
+    height: 80px;
+}
+
+.menu_list{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.list{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-family: var(--font-paragraph);
+    font-weight: 100;
+}
+
+.menu_list a:hover{
+    color: var(--card-color);
+}
+
+.menu_list li:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto; /* Pushes the button to the right */
+    display: none;
+}
+
+.nav-toggle i {
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 930px) {
+    .container {
+        flex-wrap: wrap; /* Allows items to stack */
+    }
+
+    .menu_list {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+
+    .menu_list.active {
+        display: flex; /* Show when toggled */
+    }
+
+    .nav-toggle {
+        display: block; /* Show button on small screens */
+        font-size: 2rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+}
